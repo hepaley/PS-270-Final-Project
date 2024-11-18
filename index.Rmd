@@ -21,11 +21,28 @@ Does personally knowing someone who has had an abortion impact an individual's s
 ```{r}
 library(tidyverse)
 abortions <- read_csv("Data/Final Project Data.csv")
-a_attitudes <- abortions |> group_by(...18) |>
-  summarize(n = n()) 
+
+a_attitudes <- abortions |> group_by(...17) |> summarize(n = n()) 
+
 a_attitudes <- a_attitudes |> 
-filter(...18 != "BNE3_3")
-ggplot(data = a_attitudes, mapping = aes(x = ...18, y = n)) +
-  geom_col() + labs(x = "Do you Know Anyone who has had an Abortion?", y = "Number of Responses")
+filter(...17 != "BNE3_2") 
+ggplot(data = a_attitudes, mapping = aes(x = ...17, y = n)) +
+  geom_col() + theme(panel.background = element_blank()) + labs(x = "Do you Know Anyone who has had an Abortion?", y = "Number of Responses", title = "Connection to Abortion", caption = "Roper Abortion Attitudes / Alabama Supreme Court")
 ```
 
+## Analysis of Data
+```{r}
+
+abortions_yes <- abortions |> mutate( yes = ...17 == "Yes" | ...17 == "Yes, I have" | ...17 == "Yes, I know someone") |> filter(yes)
+
+abortions_yes |> select(...17, ...13) |> group_by(...13) |> summarize(n = n()) |> mutate(prop = n/sum(n)) |> knitr::kable(col.names = c("Abortion Ban at 16 Weeks", "Number of Answers", "Prop. of Answers "), caption = "Responses To Abortion Ban By Those Who Know Someone Who Has Had An Abortion")
+
+```
+```{r}
+abortions_no <- abortions |> filter(...17 == "No")
+
+abortions_no |> select(...17, ...13) |> group_by(...13) |>
+  summarize(n = n()) |> mutate(prop = n/sum(n)) |> knitr::kable(col.names = c("Abortion Ban at 16 Weeks", "Number of Answers", "Prop. of Answers "), caption = "Responses To Abortion Ban By Those Who Don't Know Someone Who Has Had An Abortion")
+```
+
+Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I intend to look into this further by creating another visualization between the variables in the tables. 
