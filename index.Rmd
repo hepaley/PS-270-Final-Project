@@ -56,7 +56,7 @@ Those Who Know Someone Who Has Had An Abortion")
 ```
 ```{r}
 abortions_no <- abortions |> filter(...17 == "No")
-
+abortions_no
 abortions_no |> select(...17, ...13) |>
   group_by(...13) |>
   summarize(n = n()) |>
@@ -68,3 +68,22 @@ abortions_no |> select(...17, ...13) |>
 ```
 
 Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I intend to look into this further by creating another visualization between the variables in the tables. 
+Filter out NA and skips 
+take outcomes yes or no and make new variable that is 0 when no and 1 if yes 
+categorical outcomes, linear probabiltiy model (the probability of someone saying yes to support for the outcome) 
+## Finding the P Value 
+```{r}
+library(infer)
+
+abortions <-
+  abortions |> filter(...17 != "BNE3_2") |> mutate(Simple_17 = if_else(...17 == "Yes" | 
+                         ...17 == "Yes, I have" |
+                         ...17 == "Yes, I know someone", "Yes", "Not Yes"))
+
+abortions
+
+```
+```
+
+
+

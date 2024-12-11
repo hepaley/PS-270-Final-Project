@@ -18,73 +18,6 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { color: #00769e; background-color: #f1f3f5; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span { color: #00769e; } /* Normal */
-code span.al { color: #ad0000; } /* Alert */
-code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #657422; } /* Attribute */
-code span.bn { color: #ad0000; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #00769e; } /* ControlFlow */
-code span.ch { color: #20794d; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #5e5e5e; } /* Comment */
-code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #ad0000; } /* DataType */
-code span.dv { color: #ad0000; } /* DecVal */
-code span.er { color: #ad0000; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #ad0000; } /* Float */
-code span.fu { color: #4758ab; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #00769e; } /* Keyword */
-code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #00769e; } /* Other */
-code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
-code span.ss { color: #20794d; } /* SpecialString */
-code span.st { color: #20794d; } /* String */
-code span.va { color: #111111; } /* Variable */
-code span.vs { color: #20794d; } /* VerbatimString */
-code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-</style>
 
 
   <!--radix_placeholder_meta_tags-->
@@ -1627,8 +1560,30 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortions_no</span> <span class='op'>&lt;-</span> <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"No"</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>abortions_no</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='va'>abortions_no</span></span></code></pre>
+</div>
+<pre><code># A tibble: 485 × 42
+   `31120887` ...2     ...3  ...4  ...5  ...6  ...7  ...8  ...9  ...10
+   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 1          R_7dGKo… 2/25… 2/25… &lt;NA&gt;  SPLI… Very… &lt;NA&gt;  Some… Some…
+ 2 4          R_7NDFS… 2/23… 2/23… SPLI… &lt;NA&gt;  Hear… Neve… &lt;NA&gt;  Hear…
+ 3 5          R_7oE6c… 2/23… 2/23… SPLI… &lt;NA&gt;  Neve… Neve… &lt;NA&gt;  Hear…
+ 4 6          R_7wnpU… 2/24… 2/25… SPLI… &lt;NA&gt;  Hear… Neve… &lt;NA&gt;  Neve…
+ 5 7          R_6saRC… 2/24… 2/24… SPLI… &lt;NA&gt;  Hear… Very… &lt;NA&gt;  Neve…
+ 6 8          R_7viGH… 2/25… 2/25… SPLI… &lt;NA&gt;  Hear… Hear… &lt;NA&gt;  Hear…
+ 7 13         R_64Jbq… 2/23… 2/23… SPLI… &lt;NA&gt;  Neve… Some… &lt;NA&gt;  Some…
+ 8 15         R_3EKJ0… 2/24… 2/24… &lt;NA&gt;  SPLI… Very… &lt;NA&gt;  Some… Neve…
+ 9 16         R_5szwf… 2/24… 2/24… &lt;NA&gt;  SPLI… Some… &lt;NA&gt;  Neve… Neve…
+10 23         R_6G2pC… 2/24… 2/24… &lt;NA&gt;  SPLI… Very… &lt;NA&gt;  Some… Some…
+# ℹ 475 more rows
+# ℹ 32 more variables: ...11 &lt;chr&gt;, ...12 &lt;chr&gt;, ...13 &lt;chr&gt;,
+#   ...14 &lt;chr&gt;, ...15 &lt;chr&gt;, ...16 &lt;chr&gt;, ...17 &lt;chr&gt;, ...18 &lt;chr&gt;,
+#   ...19 &lt;chr&gt;, ...20 &lt;chr&gt;, ...21 &lt;chr&gt;, ...22 &lt;chr&gt;, ...23 &lt;chr&gt;,
+#   ...24 &lt;chr&gt;, ...25 &lt;chr&gt;, ...26 &lt;chr&gt;, ...27 &lt;chr&gt;, ...28 &lt;chr&gt;,
+#   ...29 &lt;chr&gt;, ...30 &lt;chr&gt;, ...31 &lt;chr&gt;, ...32 &lt;chr&gt;, ...33 &lt;chr&gt;,
+#   ...34 &lt;chr&gt;, ...35 &lt;chr&gt;, ...36 &lt;chr&gt;, ...37 &lt;chr&gt;, …</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortions_no</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='va'>n</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
@@ -1675,8 +1630,47 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 </tbody>
 </table>
 </div>
-<p>Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don’t. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I intend to look into this further by creating another visualization between the variables in the tables.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don’t. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I intend to look into this further by creating another visualization between the variables in the tables.
+Filter out NA and skips
+take outcomes yes or no and make new variable that is 0 when no and 1 if yes
+categorical outcomes, linear probabiltiy model (the probability of someone saying yes to support for the outcome)
+## Finding the P Value
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidymodels/infer'>infer</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>abortions</span> <span class='op'>&lt;-</span></span>
+<span>  <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"BNE3_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Simple_17 <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes"</span> <span class='op'>|</span> </span>
+<span>                         <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span> <span class='op'>|</span></span>
+<span>                         <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span>, <span class='st'>"Yes"</span>, <span class='st'>"Not Yes"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>abortions</span></span></code></pre>
+</div>
+<pre><code># A tibble: 1,020 × 43
+   `31120887` ...2     ...3  ...4  ...5  ...6  ...7  ...8  ...9  ...10
+   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 1          R_7dGKo… 2/25… 2/25… &lt;NA&gt;  SPLI… Very… &lt;NA&gt;  Some… Some…
+ 2 2          R_30cuv… 2/24… 2/24… SPLI… &lt;NA&gt;  Very… Very… &lt;NA&gt;  Some…
+ 3 3          R_1TTPT… 2/23… 2/23… &lt;NA&gt;  SPLI… Very… &lt;NA&gt;  Very… Hear…
+ 4 4          R_7NDFS… 2/23… 2/23… SPLI… &lt;NA&gt;  Hear… Neve… &lt;NA&gt;  Hear…
+ 5 5          R_7oE6c… 2/23… 2/23… SPLI… &lt;NA&gt;  Neve… Neve… &lt;NA&gt;  Hear…
+ 6 6          R_7wnpU… 2/24… 2/25… SPLI… &lt;NA&gt;  Hear… Neve… &lt;NA&gt;  Neve…
+ 7 7          R_6saRC… 2/24… 2/24… SPLI… &lt;NA&gt;  Hear… Very… &lt;NA&gt;  Neve…
+ 8 8          R_7viGH… 2/25… 2/25… SPLI… &lt;NA&gt;  Hear… Hear… &lt;NA&gt;  Hear…
+ 9 9          R_177ZX… 2/25… 2/25… SPLI… &lt;NA&gt;  Hear… Neve… &lt;NA&gt;  Neve…
+10 10         R_6db1A… 2/24… 2/24… SPLI… &lt;NA&gt;  Hear… Hear… &lt;NA&gt;  Hear…
+# ℹ 1,010 more rows
+# ℹ 33 more variables: ...11 &lt;chr&gt;, ...12 &lt;chr&gt;, ...13 &lt;chr&gt;,
+#   ...14 &lt;chr&gt;, ...15 &lt;chr&gt;, ...16 &lt;chr&gt;, ...17 &lt;chr&gt;, ...18 &lt;chr&gt;,
+#   ...19 &lt;chr&gt;, ...20 &lt;chr&gt;, ...21 &lt;chr&gt;, ...22 &lt;chr&gt;, ...23 &lt;chr&gt;,
+#   ...24 &lt;chr&gt;, ...25 &lt;chr&gt;, ...26 &lt;chr&gt;, ...27 &lt;chr&gt;, ...28 &lt;chr&gt;,
+#   ...29 &lt;chr&gt;, ...30 &lt;chr&gt;, ...31 &lt;chr&gt;, ...32 &lt;chr&gt;, ...33 &lt;chr&gt;,
+#   ...34 &lt;chr&gt;, ...35 &lt;chr&gt;, ...36 &lt;chr&gt;, ...37 &lt;chr&gt;, …</code></pre>
+</div>
+<pre><code>
+
+
+```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
