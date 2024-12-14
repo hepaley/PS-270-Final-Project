@@ -8,28 +8,24 @@ output:
 ---
 
 
+## Introduction 
 
-## Project thoughts
+Does personally knowing someone who has had an abortion impact an individual's stance on abortion? Within this study I am  look at whether knowing or not knowing someone who has had an abortion impacts how an individual views abortion legislation. I hypothesize that personally knowing someone who has had an abortion will positively correlate to somewhat or strongly opposing anti-abortion or anti-contraception legislation. I believe that being personally connected to someone who has had an abortion makes it more likely that an individual will support legislation that increases abortion access. Having this personal connection to abortion may make it so people feel the issue is "closer" to them than those who do not have a personal connection to abortion. My data sample is based off of a web-survey measuring individual abortion attitudes between February 23, 2024 - February 25, 2024. My unit of analysis is an individual person. The explanatory variable of interest is whether or not a surveyed individual knows someone who has had an abortion. The variable is coded as yes, yes, I have, or yes I know someone if the individual knows someone who has had an abortion, or no if the individual does not someone who has had an abortion. My outcome variable is whether an individual strongly supports, somewhat supports, somewhat opposes, or strongly opposes a nationwide ban on abortion at 16 weeks of pregnancy. If I observe more "strongly opposes" and "somewhat opposes" than other responses regarding my outcome variable (going in a more negative direction), this would support my hypothesis. Conversely, if I observe more "strongly supports" and "somewhat supports" (going in a positive direction) than other responses regarding my outcome variable, this would go against my hypothesis. A positive correlation between strongly or somewhat opposing anti-abortion legislation and knowing someone who has had an abortion would indicate support for my hypothesis. 
 
-I am interested in exploring data related to how effective canvassing is as a method to get people to vote...especially in the upcoming election. I definitely want to try and do something related to this years election. I would also be interested in seeing whether one issue is the reason individuals vote for a certain candidate. 
-
-## Project Proposal
-
-Does personally knowing someone who has had an abortion impact an individual's stance on abortion? Within this study I am planning to look at whether knowing or not knowing someone who has had an abortion impacts how an individual views abortion legislation. I hypothesize that personally knowing someone who has had an abortion will positively correlate to somewhat or strongly opposing anti-abortion or anti-contraception legislation. I believe that being personally connected to someone who has had an abortion makes it more likely that an individual will support legislation that increases abortion access. Having this personal connection to abortion may make it so people feel the issue is "closer" to them than those who do not have a personal connection to abortion. My data sample is based off of a web-survey measuring individual abortion attitudes between February 23, 2024 - February 25, 2024. My unit of analysis is an individual person. The explanatory variable of interest is whether or not a surveyed individual knows someone who has had an abortion. The variable is coded as yes, yes, I have, or yes I know someone if the individual knows someone who has had an abortion, or no if the individual does not someone who has had an abortion. My outcome variable is whether an individual strongly supports, somewhat supports, somewhat opposes, or strongly opposes a nationwide ban on abortion at 16 weeks of pregnancy. I may also look at this same set of answers regarding the question of banning emergency contraceptives. If I observe more "strongly opposes" and "somewhat opposes" than other responses regarding my outcome variable, this would support my hypothesis. Conversely, if I observe more "strongly supports" and "somewhat supports" than other responses regarding my outcome variable, this would go against my hypothesis. A positive correlation between strongly or somewhat opposing anti-abortion legislation and knowing someone who has had an abortion would indicate support for my hypothesis. 
-
-## Data Visualization
+## Data 
+Both the independent (connection to abortion) and dependent variables (legislation response) were measured by a web-based survey produced by The Roper Center.
 ```{r}
 library(tidyverse)
 abortions <- read_csv("Data/Final Project Data.csv")
 
-a_attitudes <- abortions |> group_by(...17) |> summarize(n = n()) 
-
+a_attitudes <- abortions |> group_by(...13) |> summarize(n = n()) 
+a_attitudes
 a_attitudes <- a_attitudes |> 
-filter(...17 != "BNE3_2") 
+filter(...13 != "BNE2_2") 
 ggplot(data = a_attitudes, 
-       mapping = aes(x = ...17, y = n)) + geom_col() + 
+       mapping = aes(x = ...13, y = n)) + geom_col() + 
   theme(panel.background = element_blank()) + 
-  labs(x = "Do you Know Anyone who has had an Abortion?", 
+  labs(x = "Response to Sixteen Week Abortion Ban", 
        y = "Number of Responses", title = "Connection to Abortion",
        caption = 
          "Roper Abortion Attitudes / Alabama Supreme Court")
@@ -67,23 +63,32 @@ abortions_no |> select(...17, ...13) |>
       caption = "Responses To Abortion Ban By Those Who Don't Know Someone Who Has Had An Abortion")
 ```
 
-Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I intend to look into this further by creating another visualization between the variables in the tables. 
-Filter out NA and skips 
-take outcomes yes or no and make new variable that is 0 when no and 1 if yes 
-categorical outcomes, linear probabiltiy model (the probability of someone saying yes to support for the outcome) 
+Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I will look into this further by running a linear regression and recoding the variables of interest.
+
 ## Finding the P Value 
 ```{r}
 library(infer)
 
-abortions <-
-  abortions |> filter(...17 != "BNE3_2") |> mutate(Simple_17 = if_else(...17 == "Yes" | 
-                         ...17 == "Yes, I have" |
-                         ...17 == "Yes, I know someone", "Yes", "Not Yes"))
-
 abortions
+abortionsp <-
+  abortions |> filter(...17 != "BNE3_2") |> filter(...17 != "Prefer not to answer") |> filter(...17 != "Skipped")
+
+
+abortionsp <- abortionsp |> mutate(...17new = if_else(...17=="Yes" | ...17 == "Yes, I have" | ...17 == "Yes, I know someone", 1, 0)) |> 
+  filter(...13 != "BNE2_2") |> 
+  filter(...13 != "Skipped") |>  
+  mutate(...13new = case_when(...13 == "Strongly oppose" ~ 1, ...13 == "Somewhat oppose"~ 2, ...13 == "Somewhat support" ~ 3, ...13 == "Strongly support" ~ 4)) 
+
+abortionsp |> select(...13new, ...17new)
+abortion_ate <- lm(...13new ~ ...17new, data = abortionsp)  
+
+modelsummary::modelsummary(abortion_ate,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+
 
 ```
 ```
 
-
-
+As you increase ...17 by 1, aka, change from not knowing anyone who has an abortion to knowing someone who has had an abortion, ...13 decreases by about .290, meaning attitudes about an abortion ban at 16 weeks get more negative and move closer to strongly oppose (1)
