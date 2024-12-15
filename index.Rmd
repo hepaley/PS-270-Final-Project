@@ -26,7 +26,7 @@ ggplot(data = a_attitudes,
        mapping = aes(x = ...13, y = n)) + geom_col() + 
   theme(panel.background = element_blank()) + 
   labs(x = "Response to Sixteen Week Abortion Ban", 
-       y = "Number of Responses", title = "Connection to Abortion",
+       y = "Number of Responses", title = "Legislation Response",
        caption = 
          "Roper Abortion Attitudes / Alabama Supreme Court")
 ```
@@ -65,6 +65,17 @@ abortions_no |> select(...17, ...13) |>
 
 Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I will look into this further by running a linear regression and recoding the variables of interest.
 
+## Results
+```{r}
+abortionsp <- abortionsp |> mutate(...17new = if_else(...17=="Yes" | ...17 == "Yes, I have" | ...17 == "Yes, I know someone", 1, 0)) |> 
+  filter(...13 != "BNE2_2") |> 
+  filter(...13 != "Skipped") |>  
+  mutate(...13new = case_when(...13 == "Strongly oppose" ~ 1, ...13 == "Somewhat oppose"~ 2, ...13 == "Somewhat support" ~ 3, ...13 == "Strongly support" ~ 4)) 
+
+ggplot(abortionsp, aes(x = ...17new, y = ...13new)) + geom_point(colour = "blue", alpha = .1)+ stat_smooth(method = lm, colour = "red") + labs( x = "Connection to Abortion", y = "Legislation Response", title = "Impact of Abortion on Legislation Preference", caption = "Roper Abortion Attitudes / Alabama Supreme Court")
+```
+
+
 ## Finding the P Value 
 ```{r}
 library(infer)
@@ -74,14 +85,14 @@ abortionsp <-
   abortions |> filter(...17 != "BNE3_2") |> filter(...17 != "Prefer not to answer") |> filter(...17 != "Skipped")
 
 
-abortionsp <- abortionsp |> mutate(...17new = if_else(...17=="Yes" | ...17 == "Yes, I have" | ...17 == "Yes, I know someone", 1, 0)) |> 
+abortionsp <- abortionsp |> 
   filter(...13 != "BNE2_2") |> 
-  filter(...13 != "Skipped") |>  
+  filter(...13 != "Skipped") |> mutate(...17new = if_else(...17=="Yes" | ...17 == "Yes, I have" | ...17 == "Yes, I know someone", 1, 0)) |>
   mutate(...13new = case_when(...13 == "Strongly oppose" ~ 1, ...13 == "Somewhat oppose"~ 2, ...13 == "Somewhat support" ~ 3, ...13 == "Strongly support" ~ 4)) 
 
 abortionsp |> select(...13new, ...17new)
 abortion_ate <- lm(...13new ~ ...17new, data = abortionsp)  
-
+abortion_ate
 modelsummary::modelsummary(abortion_ate,
                            statistic = c("s.e. = {std.error}",
                                          "p = {p.value}"),
@@ -91,4 +102,6 @@ modelsummary::modelsummary(abortion_ate,
 ```
 ```
 
-As you increase ...17 by 1, aka, change from not knowing anyone who has an abortion to knowing someone who has had an abortion, ...13 decreases by about .290, meaning attitudes about an abortion ban at 16 weeks get more negative and move closer to strongly oppose (1)
+  As you increase ...17 by 1, aka, as there is a shift from not knowing anyone who has an abortion to knowing someone who has had an abortion, ...13 decreases by about .290 (the coefficient), meaning attitudes about an abortion ban at 16 weeks get more negative and move in the direction of strongly oppose (1). As stated in my initial hypothesis, a negative coefficient shows that there is a negative correlation between knowing someone who has had an abortion and supporting a 16-week abortion ban. 
+  
+## Conclusion 
