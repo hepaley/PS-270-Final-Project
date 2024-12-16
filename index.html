@@ -48,7 +48,7 @@
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Data/Final Project Data.csv","Final Project Data.xlsx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.28/header-attrs.js","index_files/header-attrs-2.29/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Data/Final Project Data.csv","Final Project Data.xlsx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/Dependent-Variable-1.png","index_files/figure-html5/Impact-Abortion-Visual-1.png","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.28/header-attrs.js","index_files/header-attrs-2.29/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1477,15 +1477,59 @@
 
 <div class="d-article">
 <h2 id="introduction">Introduction</h2>
-<p>Does personally knowing someone who has had an abortion impact an individual’s stance on abortion? Within this study I am look at whether knowing or not knowing someone who has had an abortion impacts how an individual views abortion legislation. I hypothesize that personally knowing someone who has had an abortion will positively correlate to somewhat or strongly opposing anti-abortion or anti-contraception legislation. I believe that being personally connected to someone who has had an abortion makes it more likely that an individual will support legislation that increases abortion access. Having this personal connection to abortion may make it so people feel the issue is “closer” to them than those who do not have a personal connection to abortion. My data sample is based off of a web-survey measuring individual abortion attitudes between February 23, 2024 - February 25, 2024. My unit of analysis is an individual person. The explanatory variable of interest is whether or not a surveyed individual knows someone who has had an abortion. The variable is coded as yes, yes, I have, or yes I know someone if the individual knows someone who has had an abortion, or no if the individual does not someone who has had an abortion. My outcome variable is whether an individual strongly supports, somewhat supports, somewhat opposes, or strongly opposes a nationwide ban on abortion at 16 weeks of pregnancy. If I observe more “strongly opposes” and “somewhat opposes” than other responses regarding my outcome variable (going in a more negative direction), this would support my hypothesis. Conversely, if I observe more “strongly supports” and “somewhat supports” (going in a positive direction) than other responses regarding my outcome variable, this would go against my hypothesis. A positive correlation between strongly or somewhat opposing anti-abortion legislation and knowing someone who has had an abortion would indicate support for my hypothesis.</p>
-<h2 id="data">Data</h2>
-Both the independent (connection to abortion) and dependent variables (legislation response) were measured by a web-based survey produced by The Roper Center.
+<p>Does personally knowing someone who has had an abortion impact an individual’s
+stance on abortion policy? Within this study I am looking at whether knowing
+or not knowing someone who has had an abortion impacts how an individual views
+abortion legislation. I hypothesize that personally knowing someone who has
+had an abortion will positively correlate to somewhat or strongly opposing a
+proposed 16-week abortion ban. I believe that being personally connected to
+someone who has had an abortion makes it less likely that an individual will
+support legislation that decreases abortion access. Having this personal
+connection to abortion may make it so people feel the issue is “closer”
+to them than those who do not have a personal connection to abortion.
+This could help future public policy as well as elected officials figure out
+how to campaign. Overall it has the ability to help better understand why
+people think the way they do about an issue as polarizing as abortion in the
+United States.</p>
+<p>My data sample is based off of a web-survey measuring individual abortion
+attitudes between February 23, 2024 - February 25, 2024. My unit of analysis
+is an individual person. The explanatory variable of interest is whether or
+not a surveyed individual knows someone who has had an abortion. The variable
+is initially coded as yes, yes, I have, or yes I know someone if the
+individual knows someone who has had an abortion, or no if the individual
+does not someone who has had an abortion. My outcome variable is whether an
+individual strongly supports, somewhat supports, somewhat opposes, or strongly
+opposes a nationwide ban on abortion at 16 weeks of pregnancy which I will
+eventually turn into a 4-point scale for a linear regression. If I observe an
+increase in “strongly opposes” and “somewhat opposes” than other responses
+regarding my outcome variable (going in a more negative direction), this
+would support my hypothesis when looking at the shift in not knowing to
+knowing someone who has had an abortion. Conversely, if I observe an increase
+in “strongly supports” and “somewhat supports” (going in a more positive
+direction) than other responses regarding my outcome variable, this would go
+against my hypothesis. A negative correlation between the shift from not
+knowing to knowing someone who has had an abortion and attitudes surrounding
+a 16-week abortion ban (with 1 as strongly opposed and 4 as strongly
+supported, therefore a decrease in this attitude would point to a negative
+stance on restrictive abortion policies) would indicate support for
+my hypothesis.</p>
+<h2 id="data-section">Data Section</h2>
+<p>The provided data is measured by a web-based survey produced by The Roper
+Center. There were 1020 respondents and 42 different variables. The independent
+variable in this specific project is whether an individuals knows someone who
+has had an abortion. The dependent variable is their attitude towards a
+proposed 16-week abortion ban.</p>
+<p>My research design is a cross-sectional design, as I am assessing the data at
+one point in time where no variable is manipulated. This assumes that the
+groups are identical on average (those who know someone and those who don’t
+know someone who has had an abortion).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
 <span><span class='va'>abortions</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Data/Final Project Data.csv"</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='va'>a_attitudes</span> <span class='op'>&lt;-</span> <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span><span class='va'>a_attitudes</span> <span class='op'>&lt;-</span> <span class='va'>abortions</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> </span>
 <span><span class='va'>a_attitudes</span></span></code></pre>
 </div>
 <pre><code># A tibble: 6 × 2
@@ -1499,38 +1543,41 @@ Both the independent (connection to abortion) and dependent variables (legislati
 6 Strongly support   184</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a_attitudes</span> <span class='op'>&lt;-</span> <span class='va'>a_attitudes</span> <span class='op'>|&gt;</span> </span>
-<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"BNE2_2"</span><span class='op'>)</span> </span>
+<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"BNE2_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>a_attitudes</span>, </span>
-<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>...13</span>, y <span class='op'>=</span> <span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>...13</span>, y <span class='op'>=</span> <span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"skyblue3"</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Response to Sixteen Week Abortion Ban"</span>, </span>
-<span>       y <span class='op'>=</span> <span class='st'>"Number of Responses"</span>, title <span class='op'>=</span> <span class='st'>"Connection to Abortion"</span>,</span>
+<span>       y <span class='op'>=</span> <span class='st'>"Number of Responses"</span>, title <span class='op'>=</span> <span class='st'>"Legislation Response"</span>,</span>
 <span>       caption <span class='op'>=</span> </span>
-<span>         <span class='st'>"Roper Abortion Attitudes / Alabama Supreme Court"</span><span class='op'>)</span></span></code></pre>
+<span>         <span class='st'>"Roper Abortion Attitudes / Alabama Supreme Court"</span><span class='op'>)</span> </span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+<p><img src="index_files/figure-html5/Dependent-Variable-1.png" width="624" /></p>
 </div>
-<h2 id="analysis-of-data">Analysis of Data</h2>
+<h2 id="results">Results</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortions_yes</span> <span class='op'>&lt;-</span></span>
-<span>  <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span> yes <span class='op'>=</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes"</span> <span class='op'>|</span> </span>
-<span>                         <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span> <span class='op'>|</span></span>
-<span>                         <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yes</span><span class='op'>)</span></span>
+<span>  <span class='va'>abortions</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span> yes <span class='op'>=</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes"</span> <span class='op'>|</span> </span>
+<span>                         <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span><span class='op'>|</span> </span>
+<span>          <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yes</span><span class='op'>)</span></span>
 <span></span>
-<span><span class='va'>abortions_yes</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span><span class='va'>abortions_yes</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='va'>n</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Abortion Ban at 16 Weeks"</span>, </span>
 <span>      <span class='st'>"Number of Answers"</span>, </span>
 <span>      <span class='st'>"Prop. of Answers "</span><span class='op'>)</span>, </span>
-<span>caption <span class='op'>=</span> <span class='st'>"Responses To Abortion Ban By </span></span>
-<span><span class='st'>Those Who Know Someone Who Has Had An Abortion"</span><span class='op'>)</span></span></code></pre>
+<span>caption <span class='op'>=</span> <span class='st'>"Responses to Abortion Ban by </span></span>
+<span><span class='st'>Those Connected to Abortion"</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-2">Table 1: </span>Responses To Abortion Ban By
-Those Who Know Someone Who Has Had An Abortion</caption>
+<caption><span id="tab:Connected-Abortion">Table 1: </span>Responses to Abortion Ban by
+Those Connected to Abortion</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Abortion Ban at 16 Weeks</th>
@@ -1540,29 +1587,24 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Skipped</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.0099800</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Somewhat oppose</td>
 <td style="text-align: right;">67</td>
-<td style="text-align: right;">0.1337325</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Somewhat support</td>
-<td style="text-align: right;">92</td>
-<td style="text-align: right;">0.1836327</td>
+<td style="text-align: right;">0.1350806</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Strongly oppose</td>
-<td style="text-align: right;">256</td>
-<td style="text-align: right;">0.5109780</td>
+<td style="text-align: left;">Somewhat support</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.1854839</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Strongly oppose</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">0.5161290</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Strongly support</td>
 <td style="text-align: right;">81</td>
-<td style="text-align: right;">0.1616766</td>
+<td style="text-align: right;">0.1633065</td>
 </tr>
 </tbody>
 </table>
@@ -1593,17 +1635,17 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 #   ...29 &lt;chr&gt;, ...30 &lt;chr&gt;, ...31 &lt;chr&gt;, ...32 &lt;chr&gt;, ...33 &lt;chr&gt;,
 #   ...34 &lt;chr&gt;, ...35 &lt;chr&gt;, ...36 &lt;chr&gt;, ...37 &lt;chr&gt;, …</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortions_no</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortions_no</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...17</span>, <span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>...13</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='va'>n</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Abortion Ban at 16 Weeks"</span>,</span>
 <span>         <span class='st'>"Number of Answers"</span>, </span>
 <span>         <span class='st'>"Prop. of Answers "</span><span class='op'>)</span>, </span>
-<span>      caption <span class='op'>=</span> <span class='st'>"Responses To Abortion Ban By Those Who Don't Know Someone Who Has Had An Abortion"</span><span class='op'>)</span></span></code></pre>
+<span>      caption <span class='op'>=</span> <span class='st'>"Responses to Abortion Ban by Those Not Connected to Abortion"</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 2: </span>Responses To Abortion Ban By Those Who Don’t Know Someone Who Has Had An Abortion</caption>
+<caption><span id="tab:Not-Connected-Abortion">Table 2: </span>Responses to Abortion Ban by Those Not Connected to Abortion</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Abortion Ban at 16 Weeks</th>
@@ -1613,35 +1655,59 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Skipped</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0.0206186</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Somewhat oppose</td>
 <td style="text-align: right;">96</td>
-<td style="text-align: right;">0.1979381</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Somewhat support</td>
-<td style="text-align: right;">109</td>
-<td style="text-align: right;">0.2247423</td>
+<td style="text-align: right;">0.2021053</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Strongly oppose</td>
-<td style="text-align: right;">171</td>
-<td style="text-align: right;">0.3525773</td>
+<td style="text-align: left;">Somewhat support</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">0.2294737</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Strongly oppose</td>
+<td style="text-align: right;">171</td>
+<td style="text-align: right;">0.3600000</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Strongly support</td>
 <td style="text-align: right;">99</td>
-<td style="text-align: right;">0.2041237</td>
+<td style="text-align: right;">0.2084211</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don’t. There is a higher proportion of individuals who strongly oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I will look into this further by running a linear regression and recoding the variables of interest.</p>
-<h2 id="finding-the-p-value">Finding the P Value</h2>
+<p>Looking at both of the above tables, there seems to be a difference in the
+proportion of individuals who strongly oppose and somewhat oppose a 16-week
+abortion ban between those who know someone who has had an abortion and those
+who don’t. There is a higher proportion of individuals who strongly oppose and
+somewhat oppose an abortion ban among those who know someone who has had an
+abortion in comparison to individuals who do not. This points to a possible
+correlation between knowing someone who has had an abortion and being against
+an abortion ban. I will look into this further by running a linear regression
+and recoding the variables of interest.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortionsp</span> <span class='op'>&lt;-</span> <span class='va'>abortions</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...17new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>...17</span><span class='op'>==</span><span class='st'>"Yes"</span> </span>
+<span>                            <span class='op'>|</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span></span>
+<span>                            <span class='op'>|</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span>, <span class='fl'>1</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"BNE2_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span> <span class='op'>|&gt;</span>  </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...13new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly oppose"</span> <span class='op'>~</span> <span class='fl'>1</span>,</span>
+<span>                              <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat oppose"</span><span class='op'>~</span> <span class='fl'>2</span>,</span>
+<span>                              <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat support"</span> <span class='op'>~</span> <span class='fl'>3</span>, <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly support"</span> <span class='op'>~</span> <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>abortionsp</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>...17new</span>, </span>
+<span>                       y <span class='op'>=</span> <span class='va'>...13new</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>colour <span class='op'>=</span> <span class='st'>"skyblue3"</span>, alpha <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>stat_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='va'>lm</span>, colour <span class='op'>=</span> <span class='st'>"slateblue1"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span> x <span class='op'>=</span> <span class='st'>"Connection to Abortion"</span>, </span>
+<span>        y <span class='op'>=</span> <span class='st'>"Legislation Response"</span>, </span>
+<span>        title <span class='op'>=</span> <span class='st'>"Impact of Abortion on Legislation Preference"</span></span>
+<span>        , caption <span class='op'>=</span> <span class='st'>"Roper Abortion Attitudes / Alabama Supreme Court"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/Impact-Abortion-Visual-1.png" width="624" /></p>
+</div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidymodels/infer'>infer</a></span><span class='op'>)</span></span>
@@ -1670,15 +1736,27 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 #   ...34 &lt;chr&gt;, ...35 &lt;chr&gt;, ...36 &lt;chr&gt;, ...37 &lt;chr&gt;, …</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortionsp</span> <span class='op'>&lt;-</span></span>
-<span>  <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"BNE3_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"Prefer not to answer"</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span></span>
-<span></span>
-<span></span>
-<span><span class='va'>abortionsp</span> <span class='op'>&lt;-</span> <span class='va'>abortionsp</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...17new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>...17</span><span class='op'>==</span><span class='st'>"Yes"</span> <span class='op'>|</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span> <span class='op'>|</span> <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span>, <span class='fl'>1</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='va'>abortions</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"BNE3_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"Prefer not to answer"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...17</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortionsp</span> <span class='op'>&lt;-</span> <span class='va'>abortionsp</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"BNE2_2"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span> <span class='op'>|&gt;</span>  </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...13new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly oppose"</span> <span class='op'>~</span> <span class='fl'>1</span>, <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat oppose"</span><span class='op'>~</span> <span class='fl'>2</span>, <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat support"</span> <span class='op'>~</span> <span class='fl'>3</span>, <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly support"</span> <span class='op'>~</span> <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span> </span>
-<span></span>
-<span><span class='va'>abortionsp</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...13new</span>, <span class='va'>...17new</span><span class='op'>)</span></span></code></pre>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>!=</span> <span class='st'>"Skipped"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...17new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>...17</span><span class='op'>==</span><span class='st'>"Yes"</span> <span class='op'>|</span></span>
+<span>                              <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I have"</span> <span class='op'>|</span> </span>
+<span>                              <span class='va'>...17</span> <span class='op'>==</span> <span class='st'>"Yes, I know someone"</span>, <span class='fl'>1</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>...13new <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span><span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly oppose"</span> <span class='op'>~</span> <span class='fl'>1</span>, <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat oppose"</span><span class='op'>~</span> <span class='fl'>2</span>,</span>
+<span>                              <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Somewhat support"</span> <span class='op'>~</span> <span class='fl'>3</span>,</span>
+<span>                              <span class='va'>...13</span> <span class='op'>==</span> <span class='st'>"Strongly support"</span> <span class='op'>~</span> <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortionsp</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>...13new</span>, <span class='va'>...17new</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code># A tibble: 971 × 2
    ...13new ...17new
@@ -1696,15 +1774,28 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 # ℹ 961 more rows</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>abortion_ate</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>...13new</span> <span class='op'>~</span> <span class='va'>...17new</span>, data <span class='op'>=</span> <span class='va'>abortionsp</span><span class='op'>)</span>  </span>
-<span></span>
+<span><span class='va'>abortion_ate</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = ...13new ~ ...17new, data = abortionsp)
+
+Coefficients:
+(Intercept)     ...17new  
+     2.2863      -0.2903  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span> <span class='va'>var_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"(Intercept)"</span> <span class='op'>=</span> <span class='st'>"Intercept"</span>,</span>
+<span>                  <span class='st'>"...17new"</span> <span class='op'>=</span> <span class='st'>"Abortion Connection"</span></span>
+<span>                  <span class='op'>)</span></span>
 <span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://modelsummary.com/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>abortion_ate</span>,</span>
 <span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
 <span>                                         <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
-<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span>                           coef_map <span class='op'>=</span> <span class='va'>var_labels</span>,</span>
+<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span> </span></code></pre>
 </div>
-<table style="width:40%;">
+<table style="width:51%;">
 <colgroup>
-<col style="width: 19%" />
+<col style="width: 30%" />
 <col style="width: 20%" />
 </colgroup>
 <thead>
@@ -1717,7 +1808,7 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 </thead>
 <tbody>
 <tr class="odd">
-<td>(Intercept)</td>
+<td>Intercept</td>
 <td>2.286</td>
 </tr>
 <tr class="even">
@@ -1729,7 +1820,7 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 <td>p = &lt;0.001</td>
 </tr>
 <tr class="even">
-<td>…17new</td>
+<td>Abortion Connection</td>
 <td>-0.290</td>
 </tr>
 <tr class="odd">
@@ -1755,8 +1846,57 @@ Those Who Know Someone Who Has Had An Abortion</caption>
 </tbody>
 </table>
 </div>
-<pre><code>
-As you increase ...17 by 1, aka, change from not knowing anyone who has an abortion to knowing someone who has had an abortion, ...13 decreases by about .290, meaning attitudes about an abortion ban at 16 weeks get more negative and move closer to strongly oppose (1)
+<pre><code>The Plot: The Impact of Abortion plot shows that as connection to abortion is 
+increased from 0 to 1 on the x axis, and therefore we are shifting from those 
+who do not know anyone who has had an abortion to those who do know someone who 
+has had an abortion, there is a decrease in legislation response. What this
+decrease represents is a more negative response to a 16-week abortion ban. 
+There is an obvious negative slope that supports this statement.
+
+Regression Output: The coefficent of Abortion Connection is  -.290. This can be
+understood as meaning that attitudes about an abortion ban at 16 weeks get more 
+negative and move in the direction of strongly oppose (1) as connection to
+abortion increases from 0 to 1. As stated in my initial hypothesis, a negative 
+coefficient shows that there is a negative correlation between knowing someone
+who has had an abortion and supporting a 16-week abortion ban. This coefficient
+is statistically significant, as the corresponding p-value is &lt;0.001 indicating
+high statistical significance. It would be dangerous to interpret this study 
+causaully, as there could be various confounders that are not measured in this 
+data set, so while we can interpret it as correlation, we should not interpret 
+it as causation. To fully be confident that the coefficent represents a causal 
+relationship, it would be imperative to run various permutations, statistical 
+control, and the use of multiple subcalissifications. 
+  
+## Conclusion 
+  I found that there is a correlation between whether knowing or not knowing
+someone who has had an abortion and how a proposed 16-week abortion ban is 
+assessed, which mostly supports my hypothesis. As connection to abortion 
+increases from 0 to 1, there is a decrease of about .29 in legislation response,
+pointing to a decrease in positive attitudes towards an abortion ban. This 
+decrease was statistically significant with a p-value &lt; 0.001 proving that it is
+fair to say there is a correlation between the independent and dependent 
+variables. While there may be a correlation, I cannot confidently say there is 
+causation, as there can be many things besides connection to abortion that could
+cause an individual to respond negatively towards an abortion ban, such as the 
+recent overturning of Roe v. Wade and how that is percieved. I think that 
+although I talk about correlation in my hypothesis, I was also hypothesizing 
+some type of causation by using the word &quot;impacts&quot; in my introduction which 
+alludes to some type of causal effect. This part of my hypothesis is not 
+supported by my data. 
+  This points to one of the limitations of the analysis and threats to inference
+which is confounding. This is especially present in my cross-sectional 
+analysis, as confounding is one of the main issues within cross-sectional 
+studies specifically. If I had more time/money, I think it would be interesting
+to run permutations on my data and look at some of the other variables measured
+in the study to strenghten the analysis. Additionally, I think it would have 
+been interesting to further understand how connection to abortion impacts
+response to other legislation besides just a 16-week abortion ban. 
+  
+## Work Cited
+
+Axios. (2024). Axios/Ipsos Survey: Abortion Attitudes/Alabama Supreme Court 
+(Version 2) [Dataset]. Roper Center for Public Opinion Research. doi:10.25940/
+ROPER-31120887
 ```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

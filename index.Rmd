@@ -10,12 +10,57 @@ output:
 
 ## Introduction 
 
-  Does personally knowing someone who has had an abortion impact an individual's stance on abortion policy? Within this study I am looking at whether knowing or not knowing someone who has had an abortion impacts how an individual views abortion legislation. I hypothesize that personally knowing someone who has had an abortion will positively correlate to somewhat or strongly opposing a proposed 16-week abortion ban. I believe that being personally connected to someone who has had an abortion makes it less likely that an individual will support legislation that decreases abortion access. Having this personal connection to abortion may make it so people feel the issue is "closer" to them than those who do not have a personal connection to abortion. This could help future public policy as well as elected officials figure out how to campaign. Overall it has the ability to help better understand why people think the way they do about an issue as polarizing as abortion in the United States. 
-  My data sample is based off of a web-survey measuring individual abortion attitudes between February 23, 2024 - February 25, 2024. My unit of analysis is an individual person. The explanatory variable of interest is whether or not a surveyed individual knows someone who has had an abortion. The variable is initially coded as yes, yes, I have, or yes I know someone if the individual knows someone who has had an abortion, or no if the individual does not someone who has had an abortion. My outcome variable is whether an individual strongly supports, somewhat supports, somewhat opposes, or strongly opposes a nationwide ban on abortion at 16 weeks of pregnancy which I will eventually turn into a 4-point scale for a linear regression. If I observe an increase in "strongly opposes" and "somewhat opposes" than other responses regarding my outcome variable (going in a more negative direction), this would support my hypothesis when looking at the shift in not knowing to knowing someone who has had an abortion. Conversely, if I observe an increase in "strongly supports" and "somewhat supports" (going in a more positive direction) than other responses regarding my outcome variable, this would go against my hypothesis. A negative correlation between the shift from not knowing to knowing someone who has had an abortion and attitudes surrounding a 16-week abortion ban (with 1 as strongly opposed and 4 as strongly supported, therefore a decrease in this attitude would point to a negative stance on restrictive abortion policies) would indicate support for my hypothesis. 
+  Does personally knowing someone who has had an abortion impact an individual's
+stance on abortion policy? Within this study I am looking at whether knowing 
+or not knowing someone who has had an abortion impacts how an individual views
+abortion legislation. I hypothesize that personally knowing someone who has
+had an abortion will positively correlate to somewhat or strongly opposing a 
+proposed 16-week abortion ban. I believe that being personally connected to 
+someone who has had an abortion makes it less likely that an individual will
+support legislation that decreases abortion access. Having this personal 
+connection to abortion may make it so people feel the issue is "closer" 
+to them than those who do not have a personal connection to abortion. 
+This could help future public policy as well as elected officials figure out
+how to campaign. Overall it has the ability to help better understand why
+people think the way they do about an issue as polarizing as abortion in the 
+United States. 
+
+  My data sample is based off of a web-survey measuring individual abortion 
+attitudes between February 23, 2024 - February 25, 2024. My unit of analysis 
+is an individual person. The explanatory variable of interest is whether or
+not a surveyed individual knows someone who has had an abortion. The variable
+is initially coded as yes, yes, I have, or yes I know someone if the 
+individual knows someone who has had an abortion, or no if the individual 
+does not someone who has had an abortion. My outcome variable is whether an 
+individual strongly supports, somewhat supports, somewhat opposes, or strongly
+opposes a nationwide ban on abortion at 16 weeks of pregnancy which I will 
+eventually turn into a 4-point scale for a linear regression. If I observe an 
+increase in "strongly opposes" and "somewhat opposes" than other responses 
+regarding my outcome variable (going in a more negative direction), this 
+would support my hypothesis when looking at the shift in not knowing to 
+knowing someone who has had an abortion. Conversely, if I observe an increase
+in "strongly supports" and "somewhat supports" (going in a more positive
+direction) than other responses regarding my outcome variable, this would go
+against my hypothesis. A negative correlation between the shift from not
+knowing to knowing someone who has had an abortion and attitudes surrounding
+a 16-week abortion ban (with 1 as strongly opposed and 4 as strongly 
+supported, therefore a decrease in this attitude would point to a negative 
+stance on restrictive abortion policies) would indicate support for 
+my hypothesis. 
 
 ## Data Section 
-  The provided data is measured by a web-based survey produced by The Roper Center. There were 1020 respondents and 42 different variables. The independent variable in this specific project is whether an individuals knows someone who has had an abortion. The dependent variable is their attitude towards a proposed 16-week abortion ban.
-  My research design is a cross-sectional design, as I am assessing the data at one point in time where no variable is manipulated. This assumes that the groups are identical on average (those who know someone and those who don't know someone who has had an abortion).
+
+  The provided data is measured by a web-based survey produced by The Roper 
+Center. There were 1020 respondents and 42 different variables. The independent
+variable in this specific project is whether an individuals knows someone who 
+has had an abortion. The dependent variable is their attitude towards a 
+proposed 16-week abortion ban.
+
+  My research design is a cross-sectional design, as I am assessing the data at 
+one point in time where no variable is manipulated. This assumes that the 
+groups are identical on average (those who know someone and those who don't 
+know someone who has had an abortion).
+
 ```{r Dependent-Variable}
 library(tidyverse)
 abortions <- read_csv("Data/Final Project Data.csv")
@@ -69,10 +114,18 @@ abortions_no |> select(...17, ...13) |> filter(...13 != "Skipped") |>
       caption = "Responses to Abortion Ban by Those Not Connected to Abortion")
 ```
 
-Looking at both of the above tables, there seems to be a difference in the proportion of individuals who strongly oppose and somewhat oppose a 16-week abortion ban between those who know someone who has had an abortion and those who don't. There is a higher proportion of individuals who strongly oppose and somewhat oppose an abortion ban among those who know someone who has had an abortion in comparison to individuals who do not. This points to a possible correlation between knowing someone who has had an abortion and being against an abortion ban. I will look into this further by running a linear regression and recoding the variables of interest.
+  Looking at both of the above tables, there seems to be a difference in the 
+proportion of individuals who strongly oppose and somewhat oppose a 16-week 
+abortion ban between those who know someone who has had an abortion and those
+who don't. There is a higher proportion of individuals who strongly oppose and 
+somewhat oppose an abortion ban among those who know someone who has had an 
+abortion in comparison to individuals who do not. This points to a possible 
+correlation between knowing someone who has had an abortion and being against 
+an abortion ban. I will look into this further by running a linear regression 
+and recoding the variables of interest.
 
 ```{r Impact-Abortion-Visual}
-abortionsp <- abortionsp |> 
+abortionsp <- abortions |> 
   mutate(...17new = if_else(...17=="Yes" 
                             | ...17 == "Yes, I have"
                             | ...17 == "Yes, I know someone", 1, 0)) |> 
@@ -132,14 +185,54 @@ modelsummary::modelsummary(abortion_ate,
 
 ```
 ```
-The Plot: The Impact of Abortion plot shows that as connection to abortion is increased from 0 to 1 on the x axis, and therefore we are shifting from those who do not know anyone who has had an abortion to those who do know someone who has had an abortion, there is a decrease in legislation response. What this decrease represents is a more negative response to a 16-week abortion ban. There is an obvious negative slope that supports this statement.
+The Plot: The Impact of Abortion plot shows that as connection to abortion is 
+increased from 0 to 1 on the x axis, and therefore we are shifting from those 
+who do not know anyone who has had an abortion to those who do know someone who 
+has had an abortion, there is a decrease in legislation response. What this
+decrease represents is a more negative response to a 16-week abortion ban. 
+There is an obvious negative slope that supports this statement.
 
-Regression Output: The coefficent of Abortion Connection is  -.290. This can be understood as meaning that attitudes about an abortion ban at 16 weeks get more negative and move in the direction of strongly oppose (1) as connection to abortion increases from 0 to 1. As stated in my initial hypothesis, a negative coefficient shows that there is a negative correlation between knowing someone who has had an abortion and supporting a 16-week abortion ban. This coefficient is statistically significant, as the corresponding p-value is <0.001 indicating high statistical significance. It would be dangerous to interpret this study causaully, as there could be various confounders that are not measured in this data set, so while we can interpret it as correlation, we should not interpret it as causation. To fully be confident that the coefficent represents a causal relationship, it would be imperative to run various permutations, statistical control, and the use of multiple subcalissifications. 
+Regression Output: The coefficent of Abortion Connection is  -.290. This can be
+understood as meaning that attitudes about an abortion ban at 16 weeks get more 
+negative and move in the direction of strongly oppose (1) as connection to
+abortion increases from 0 to 1. As stated in my initial hypothesis, a negative 
+coefficient shows that there is a negative correlation between knowing someone
+who has had an abortion and supporting a 16-week abortion ban. This coefficient
+is statistically significant, as the corresponding p-value is <0.001 indicating
+high statistical significance. It would be dangerous to interpret this study 
+causaully, as there could be various confounders that are not measured in this 
+data set, so while we can interpret it as correlation, we should not interpret 
+it as causation. To fully be confident that the coefficent represents a causal 
+relationship, it would be imperative to run various permutations, statistical 
+control, and the use of multiple subcalissifications. 
   
 ## Conclusion 
-  I found that there is a correlation between whether knowing or not knowing someone who has had an abortion and how a proposed 16-week abortion ban is assessed, which mostly supports my hypothesis. As connection to abortion increases from 0 to 1, there is a decrease of about .29 in legislation response, pointing to a decrease in positive attitudes towards an abortion ban. This decrease was statistically significant with a p-value < 0.001 proving that it is fair to say there is a correlation between the independent and dependent variables. While there may be a correlation, I cannot confidently say there is causation, as there can be many things besides connection to abortion that could cause an individual to respond negatively towards an abortion ban, such as the recent overturning of Roe v. Wade and how that is percieved. I think that although I talk about correlation in my hypothesis, I was also hypothesizing some type of causation by using the word "impacts" in my introduction which alludes to some type of causal effect. This part of my hypothesis is not supported by my data. 
-  This points to one of the limitations of the analysis and threats to inference which is confounding. This is especially present in my cross-sectional analysis, as confounding is one of the main issues within cross-sectional studies specifically. If I had more time/money, I think it would be interesting to run permutations on my data and look at some of the other variables measured in the study to strenghten the analysis. Additionally, I think it would have been interesting to further understand how connection to abortion impacts response to other legislation besides just a 16-week abortion ban. 
+  I found that there is a correlation between whether knowing or not knowing
+someone who has had an abortion and how a proposed 16-week abortion ban is 
+assessed, which mostly supports my hypothesis. As connection to abortion 
+increases from 0 to 1, there is a decrease of about .29 in legislation response,
+pointing to a decrease in positive attitudes towards an abortion ban. This 
+decrease was statistically significant with a p-value < 0.001 proving that it is
+fair to say there is a correlation between the independent and dependent 
+variables. While there may be a correlation, I cannot confidently say there is 
+causation, as there can be many things besides connection to abortion that could
+cause an individual to respond negatively towards an abortion ban, such as the 
+recent overturning of Roe v. Wade and how that is percieved. I think that 
+although I talk about correlation in my hypothesis, I was also hypothesizing 
+some type of causation by using the word "impacts" in my introduction which 
+alludes to some type of causal effect. This part of my hypothesis is not 
+supported by my data. 
+  This points to one of the limitations of the analysis and threats to inference
+which is confounding. This is especially present in my cross-sectional 
+analysis, as confounding is one of the main issues within cross-sectional 
+studies specifically. If I had more time/money, I think it would be interesting
+to run permutations on my data and look at some of the other variables measured
+in the study to strenghten the analysis. Additionally, I think it would have 
+been interesting to further understand how connection to abortion impacts
+response to other legislation besides just a 16-week abortion ban. 
   
 ## Work Cited
 
-Axios. (2024). Axios/Ipsos Survey: Abortion Attitudes/Alabama Supreme Court (Version 2) [Dataset]. Roper Center for Public Opinion Research. doi:10.25940/ROPER-31120887
+Axios. (2024). Axios/Ipsos Survey: Abortion Attitudes/Alabama Supreme Court 
+(Version 2) [Dataset]. Roper Center for Public Opinion Research. doi:10.25940/
+ROPER-31120887
