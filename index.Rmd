@@ -184,7 +184,6 @@ modelsummary::modelsummary(abortion_ate,
 
 
 ```
-```
 The Plot: The Impact of Abortion plot shows that as connection to abortion is 
 increased from 0 to 1 on the x axis, and therefore we are shifting from those 
 who do not know anyone who has had an abortion to those who do know someone who 
@@ -206,7 +205,7 @@ it as causation. To fully be confident that the coefficent represents a causal
 relationship, it would be imperative to run various permutations, statistical 
 control, and the use of multiple subcalissifications. 
   
-## Conclusion 
+## Conclusion
   I found that there is a correlation between whether knowing or not knowing
 someone who has had an abortion and how a proposed 16-week abortion ban is 
 assessed, which mostly supports my hypothesis. As connection to abortion 
@@ -222,6 +221,7 @@ although I talk about correlation in my hypothesis, I was also hypothesizing
 some type of causation by using the word "impacts" in my introduction which 
 alludes to some type of causal effect. This part of my hypothesis is not 
 supported by my data. 
+
   This points to one of the limitations of the analysis and threats to inference
 which is confounding. This is especially present in my cross-sectional 
 analysis, as confounding is one of the main issues within cross-sectional 

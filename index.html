@@ -18,6 +18,73 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
 
 
   <!--radix_placeholder_meta_tags-->
@@ -1846,58 +1913,54 @@ Coefficients:
 </tbody>
 </table>
 </div>
-<pre><code>The Plot: The Impact of Abortion plot shows that as connection to abortion is 
-increased from 0 to 1 on the x axis, and therefore we are shifting from those 
-who do not know anyone who has had an abortion to those who do know someone who 
+<p>The Plot: The Impact of Abortion plot shows that as connection to abortion is
+increased from 0 to 1 on the x axis, and therefore we are shifting from those
+who do not know anyone who has had an abortion to those who do know someone who
 has had an abortion, there is a decrease in legislation response. What this
-decrease represents is a more negative response to a 16-week abortion ban. 
-There is an obvious negative slope that supports this statement.
-
-Regression Output: The coefficent of Abortion Connection is  -.290. This can be
-understood as meaning that attitudes about an abortion ban at 16 weeks get more 
+decrease represents is a more negative response to a 16-week abortion ban.
+There is an obvious negative slope that supports this statement.</p>
+<p>Regression Output: The coefficent of Abortion Connection is -.290. This can be
+understood as meaning that attitudes about an abortion ban at 16 weeks get more
 negative and move in the direction of strongly oppose (1) as connection to
-abortion increases from 0 to 1. As stated in my initial hypothesis, a negative 
+abortion increases from 0 to 1. As stated in my initial hypothesis, a negative
 coefficient shows that there is a negative correlation between knowing someone
 who has had an abortion and supporting a 16-week abortion ban. This coefficient
 is statistically significant, as the corresponding p-value is &lt;0.001 indicating
-high statistical significance. It would be dangerous to interpret this study 
-causaully, as there could be various confounders that are not measured in this 
-data set, so while we can interpret it as correlation, we should not interpret 
-it as causation. To fully be confident that the coefficent represents a causal 
-relationship, it would be imperative to run various permutations, statistical 
-control, and the use of multiple subcalissifications. 
-  
-## Conclusion 
-  I found that there is a correlation between whether knowing or not knowing
-someone who has had an abortion and how a proposed 16-week abortion ban is 
-assessed, which mostly supports my hypothesis. As connection to abortion 
+high statistical significance. It would be dangerous to interpret this study
+causaully, as there could be various confounders that are not measured in this
+data set, so while we can interpret it as correlation, we should not interpret
+it as causation. To fully be confident that the coefficent represents a causal
+relationship, it would be imperative to run various permutations, statistical
+control, and the use of multiple subcalissifications.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I found that there is a correlation between whether knowing or not knowing
+someone who has had an abortion and how a proposed 16-week abortion ban is
+assessed, which mostly supports my hypothesis. As connection to abortion
 increases from 0 to 1, there is a decrease of about .29 in legislation response,
-pointing to a decrease in positive attitudes towards an abortion ban. This 
+pointing to a decrease in positive attitudes towards an abortion ban. This
 decrease was statistically significant with a p-value &lt; 0.001 proving that it is
-fair to say there is a correlation between the independent and dependent 
-variables. While there may be a correlation, I cannot confidently say there is 
+fair to say there is a correlation between the independent and dependent
+variables. While there may be a correlation, I cannot confidently say there is
 causation, as there can be many things besides connection to abortion that could
-cause an individual to respond negatively towards an abortion ban, such as the 
-recent overturning of Roe v. Wade and how that is percieved. I think that 
-although I talk about correlation in my hypothesis, I was also hypothesizing 
-some type of causation by using the word &quot;impacts&quot; in my introduction which 
-alludes to some type of causal effect. This part of my hypothesis is not 
-supported by my data. 
-  This points to one of the limitations of the analysis and threats to inference
-which is confounding. This is especially present in my cross-sectional 
-analysis, as confounding is one of the main issues within cross-sectional 
+cause an individual to respond negatively towards an abortion ban, such as the
+recent overturning of Roe v. Wade and how that is percieved. I think that
+although I talk about correlation in my hypothesis, I was also hypothesizing
+some type of causation by using the word “impacts” in my introduction which
+alludes to some type of causal effect. This part of my hypothesis is not
+supported by my data.</p>
+<p>This points to one of the limitations of the analysis and threats to inference
+which is confounding. This is especially present in my cross-sectional
+analysis, as confounding is one of the main issues within cross-sectional
 studies specifically. If I had more time/money, I think it would be interesting
 to run permutations on my data and look at some of the other variables measured
-in the study to strenghten the analysis. Additionally, I think it would have 
+in the study to strenghten the analysis. Additionally, I think it would have
 been interesting to further understand how connection to abortion impacts
-response to other legislation besides just a 16-week abortion ban. 
-  
-## Work Cited
-
-Axios. (2024). Axios/Ipsos Survey: Abortion Attitudes/Alabama Supreme Court 
-(Version 2) [Dataset]. Roper Center for Public Opinion Research. doi:10.25940/
-ROPER-31120887
-```{.r .distill-force-highlighting-css}</code></pre>
+response to other legislation besides just a 16-week abortion ban.</p>
+<h2 id="work-cited">Work Cited</h2>
+<p>Axios. (2024). Axios/Ipsos Survey: Abortion Attitudes/Alabama Supreme Court
+(Version 2) [Dataset]. Roper Center for Public Opinion Research. <a href="doi:10.25940/" class="uri">doi:10.25940/</a>
+ROPER-31120887</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
